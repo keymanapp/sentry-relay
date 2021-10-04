@@ -60,10 +60,14 @@ if($path == 'envelope/') {
   // Rewrite the DSN endpoint in the envelope
   // DSN project_keys have not changed between sentry.keyman.com and sentry.io
   $data = str_replace(
-    "@sentry.keyman.com.local/$projectId",
+    "@sentry.keyman.com/$projectId",
     "@{$project['ingest']}/{$project['ioId']}",
     $data);
-}
+  $data = str_replace(
+    "@sentry-relay.keyman.com/$projectId",
+    "@{$project['ingest']}/{$project['ioId']}",
+    $data);
+  }
 
 $headersin = getallheaders();
 $headers = [];
