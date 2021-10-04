@@ -1,8 +1,9 @@
 # sentry-keyman-relay
 
-This is a super-hacky proxy for sentry events. We will only run this for a few
-months while we move over to new sentry infrastructure. After that time, we'll
-probably shut this down and ignore errors from old versions of Keyman, Bloom.
+This is a super-hacky proxy for sentry events. We will probably only run this
+for a few months while we move over to new sentry infrastructure. After that
+time, we'll probably shut this down and ignore errors from old versions of
+Keyman, Bloom.
 
 Basic configuration diagram:
 
@@ -34,10 +35,13 @@ That is:
   use a simple proxy.php script to do that
 * all other endpoints are forwarded through Sentry Relay, which handles
   minidumps etc and does not seem to need any other data rewriting
-
-Note that we originally looked at forwarding all traffic through proxy.php,
-but PHP/fastcgi failed to handle minidump/ -- crashing the PHP process, and
-this solution ended up being easier to get running.
+* Note that we originally looked at forwarding all traffic through proxy.php,
+  but PHP/fastcgi failed to handle minidump/ -- crashing the PHP process, and
+  this solution ended up being easier to get running.
+* applicationHost.xdt must be placed into the /site/ folder manually one time
+  after configuring the github deployment action (it switches on the reverse
+  proxy we need for forwarding minidumps etc to admin.sentry.keyman.com).
+* admin.sentry.keyman.com is both a relay and our legacy sentry server.
 
 HTTPS:
 
