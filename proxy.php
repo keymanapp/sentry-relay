@@ -17,6 +17,7 @@ if($DEBUG) {
 
 $projectMap =
 [
+  24 => [ "slug" => "lameta",               "ioId" => 3369701, "ingest" => 'o359058.ingest.sentry.io' ],
   23 => [ "slug" => "bloom-desktop",        "ioId" => 5983534, "ingest" => 'o1009031.ingest.sentry.io' ],
   18 => [ "slug" => "bloomlibrary",         "ioId" => 5983533, "ingest" => 'o1009031.ingest.sentry.io' ],
   21 => [ "slug" => "fv-android",           "ioId" => 5983532, "ingest" => 'o1005580.ingest.sentry.io' ],
