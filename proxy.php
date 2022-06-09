@@ -1,6 +1,6 @@
 <?php
 
-$DEBUG = true;
+$DEBUG = false;
 
 // This is a super-hacky proxy for sentry events
 // We will only run this for a few months while we move over to new sentry
